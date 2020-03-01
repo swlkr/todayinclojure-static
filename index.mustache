@@ -25,9 +25,23 @@
                 {{/author-url}}
               </span>
 
-              <a class="link gray underline-hover mr2" href="{{comments-url}}">
-                {{comments}} comments
-              </a>
+              {{#comments}}
+                <a class="link gray underline-hover mr2" href="{{comments-url}}">
+                  {{comments}} comments
+                </a>
+              {{/comments}}
+
+              {{#answers}}
+                <span class="gray mr2">
+                  {{answers}}
+                </span>
+              {{/answers}}
+
+              {{#replies}}
+                <span class="gray mr2">
+                  {{replies}}
+                </span>
+              {{/replies}}
             </div>
           </li>
         {{/posts}}

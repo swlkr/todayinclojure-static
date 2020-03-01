@@ -36,8 +36,7 @@ def post(users, p)
     source: 'clojureverse',
     'source_url' => 'https://clojureverse.org',
     'created-at' => created_at,
-    'comments-url' => url,
-    'comments' => p['posts_count'] - 1
+    'replies' => (p['posts_count'] - 1) == 1 ? "#{p['posts_count'] - 1} reply" : "#{p['posts_count'] - 1} replies"
   }
 end
 

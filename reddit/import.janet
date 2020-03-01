@@ -3,7 +3,7 @@
 (import ../importer :as importer)
 
 
-(def mapping {:created-at :created_utc :comment :num_comments :comments-url :permalink})
+(def mapping {:created-at :created_utc :comments :num_comments :comments-url :permalink})
 
 
 (def from (partial importer/from mapping))
@@ -13,6 +13,7 @@
   (merge p {:source "/r/clojure"
             :source-url "https://old.reddit.com/r/clojure"
             :created-at (from p :created-at)
+            :author-url (string "https://old.reddit.com/u/" (get p :author))
             :comments-url (string "https://old.reddit.com" (from p :comments-url))
             :comments (from p :comments)}))
 
