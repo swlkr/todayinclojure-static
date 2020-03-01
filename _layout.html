@@ -7,7 +7,27 @@
     <link rel="stylesheet" href="/{% css-bundle %}" />
   </head>
   <body>
-    {% body %}
-    <script type="text/javascript" src="/{% js-bundle %}"></script>
+    <div class="w-100 bg-blue">
+      <nav class="pv3 mw8 center ph4">
+        <hstack>
+          <a class="f5 white no-underline" href="/">Today in Clojure</a>
+          <spacer></spacer>
+          <hstack spacing="s">
+            <a class="white f5 no-underline" href="/about">About</a>
+            <a class="white f5 no-underline" href="/open">Stats</a>
+            <a class="white f5 no-underline" href="/rss">RSS</a>
+          </hstack>
+        </hstack>
+      </nav>
+    </div>
+    <div class="bg-white">
+      <div class="cf mw8 center pa4">
+        <div class="fl w-100 w-80-ns">
+          <div>
+            {% body %}
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
