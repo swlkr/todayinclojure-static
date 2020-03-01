@@ -16,7 +16,14 @@
                 <span>{{source}}</span>
               </a>
 
-              <span class="gray mr2">{{author}}</span>
+              <span class="gray mr2">
+                {{#author-url}}
+                  <a href="{{author-url}}" class="link gray underline-hover">{{author}}</a>
+                {{/author-url}}
+                {{^author-url}}
+                  {{author}}
+                {{/author-url}}
+              </span>
 
               <a class="link gray underline-hover mr2" href="{{comments-url}}">
                 {{comments}} comments
