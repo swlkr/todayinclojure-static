@@ -3,7 +3,7 @@
 (import ../importer :as importer)
 
 
-(def mapping {:created-at :created_at_i :comments-url :object-id :comments :num_comments})
+(def mapping {:created-at :created_at_i :comments-url :objectID :comments :num_comments})
 
 
 (defn posts-since [time]
