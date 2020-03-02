@@ -43,7 +43,7 @@ end
 
 def posts
   now = Time.now.to_i
-  midnight = now - (now % 86_400)
+  midnight = now - (now % 86_400 * 4)
   posts_json = posts_json()
   users = posts_json['users']
   posts = topics(posts_json)

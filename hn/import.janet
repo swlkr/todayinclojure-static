@@ -24,7 +24,7 @@
 
 
 (def now (os/time))
-(def midnight (- now (mod now 86400)))
+(def midnight (- now (mod now (* 86400 4))))
 
 
 (defn posts []
