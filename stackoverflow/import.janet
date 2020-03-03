@@ -2,10 +2,11 @@
 (import json)
 
 (def now (os/time))
-(def midnight (- now (mod now (* 86400 4))))
+(def midnight (- now (mod now 86400)))
+(def four-days-ago (- midnight (* 86400 4)))
 
 (def url (string/format "https://api.stackexchange.com/2.2/questions?fromdate=%d&order=desc&sort=activity&tagged=clojure&site=stackoverflow"
-                        midnight))
+                        four-days-ago))
 
 (def response (http/get url))
 

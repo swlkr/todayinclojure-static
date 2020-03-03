@@ -19,7 +19,8 @@
 
 
 (def now (os/time))
-(def midnight (- now (mod now (* 86400 4))))
+(def midnight (- now (mod now 86400)))
+(def four-days-ago (- midnight (* 86400 4)))
 
 
 (defn posts-json []
@@ -36,7 +37,7 @@
 
 
 (defn posts []
-  (let [posts (as-> (posts-since midnight) ?
+  (let [posts (as-> (posts-since four-days-ago) ?
                     (map post ?))]
     (with [f (file/open "reddit.json" :w)]
       (file/write f (json/encode posts)))))

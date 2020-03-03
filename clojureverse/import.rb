@@ -43,14 +43,15 @@ end
 
 def posts
   now = Time.now.to_i
-  midnight = now - (now % 86_400 * 4)
+  midnight = now - (now % 86_400)
+  four_days_ago = midnight - (86_400 * 4)
   posts_json = posts_json()
   users = posts_json['users']
   posts = topics(posts_json)
 
   posts
     .map { |p| post(users, p) }
-    .select { |p| p['created-at'] >= midnight }
+    .select { |p| p['created-at'] >= four_days_ago }
 end
 
 posts = posts()
