@@ -7,7 +7,7 @@
 (def stackoverflow (json/decode (slurp "stackoverflow.json") true))
 (def posts (array/concat hn reddit clojureverse stackoverflow))
 
-(def version (json/decode (slurp "version.json")))
+(def version (json/decode (slurp "version.json") true))
 
 (defn group-by
   `Groups an indexed datastructure according to function f
