@@ -1,0 +1,81 @@
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+a.link:visited {
+  color: #777777;
+}
+
+.bg-almost-white {
+  background-color: #FCFCFC;
+}
+
+.bg-clojure-blue {
+  background-color: #6083D2;
+}
+
+.b--green {
+  border-color: #A1D85F;
+}
+
+.chart-button {
+  background-color: #eee;
+  color: black;
+}
+
+.chart-button.active {
+  background-color: #357edd;
+  color: white;
+}
+
+.cron-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+@media only screen and (max-width: 600px){
+   .cron-grid {
+      grid-template-columns: 1fr;
+   }
+}
+
+.dropdown ul li {
+  display: none;
+}
+
+.select .arr:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -3px;
+  pointer-events: none;
+  border-top: 7px solid #fff;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+
+.select {
+  position: relative;
+  padding: 0.5rem;
+}
+
+.select select {
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0.7rem;
+  padding-right: 2rem;
+  background-color: #357edd;
+  color: white;
+  cursor: pointer;
+}
+
+.select::-ms-expand select {
+  display: none;
+}
