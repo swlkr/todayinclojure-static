@@ -5,7 +5,6 @@ make build
 git checkout master
 cp -R dist/* .
 rm -r dist
-git add -A
-git commit -m \"Update\"
-git push
+git commit -am "Update"
+# git push
 echo "finished!"
