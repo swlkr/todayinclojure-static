@@ -1,69 +1,116 @@
-<div class="bg-white">
-  <div class="cf mw8 center pa4">
-    <div class="fl w-100 w-80-ns">
-      {{#days}}
-        <div class="mb5">
-          <time>{{day}}</time>
-          <div>
-            <ul class="list pl0">
-              {{#posts}}
-                <li class="mb3">
-                  <div class="mb1">
-                    <a class="f4 near-black link underline-hover" href="{{url}}" target="_blank" rel="noopener noreferrer">
-                      {{& title}}
-                    </a>
-                  </div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>today in clojure</title>
 
-                  <div>
-                    <a class="mr2 gray link underline-hover" href="{{source-url}}">
-                      <span>{{source}}</span>
-                    </a>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Daily clojure news from around the web" name="description">
+    <meta content="#da532c" name="msapplication-TileColor">
+    <meta content="#ffffff" name="theme-color">
+    <meta content="website" property="og:type">
+    <meta content="https://todayinclojure.com" property="og:url">
+    <meta content="Today in Clojure" property="og:title">
+    <meta content="Daily clojure news from around the web" property="og:description">
+    <meta content="https://todayinclojure.com/share/1.jpeg" property="og:image">
+    <meta content="summary_large_image" property="twitter:card">
+    <meta content="https://todayinclojure.com" property="twitter:url">
+    <meta content="Today in Clojure" property="twitter:title">
+    <meta content="Daily clojure news from around the web" property="twitter:description">
+    <meta content="https://todayinclojure.com/share/1.jpeg" property="twitter:image">
 
-                    <span class="gray mr2">
-                      {{#author-url}}
-                        <a href="{{author-url}}" class="link gray underline-hover">{{author}}</a>
-                      {{/author-url}}
-                      {{^author-url}}
-                        {{author}}
-                      {{/author-url}}
-                    </span>
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="/site.webmanifest" rel="manifest">
 
-                    {{#comments}}
-                      <a class="link gray underline-hover mr2" href="{{comments-url}}">
-                        {{comments}} comments
-                      </a>
-                    {{/comments}}
-
-                    {{#answers}}
-                      <span class="gray mr2">
-                        {{answers}}
-                      </span>
-                    {{/answers}}
-
-                    {{#replies}}
-                      <span class="gray mr2">
-                        {{replies}}
-                      </span>
-                    {{/replies}}
-                  </div>
-                </li>
-              {{/posts}}
-            </ul>
-          </div>
-        </div>
-      {{/days}}
+    <link rel="stylesheet" href="/tachyons.min.css" />
+    <link rel="stylesheet" href="/pylon.css" />
+    <link rel="stylesheet" href="/source-sans-pro.css" />
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <div class="w-100 bg-blue">
+      <nav class="pv3 mw8 center ph4">
+        <hstack>
+          <a class="f5 white no-underline" href="/">Today in Clojure</a>
+          <spacer></spacer>
+          <hstack spacing="s">
+            <a class="white f5 no-underline" href="/about">About</a>
+          </hstack>
+        </hstack>
+      </nav>
     </div>
-    <div class="fl w-100 w-20-ns">
-      <div class="mb4">
-        <div class="bg-lightest-blue navy pv3 tc">
-          <span class="lh-title">
-            <div class="ph3 tl">
-              <div class="tl mb3">Latest release</div>
-              <a class="blue tl" href="https://search.maven.org/artifact/org.clojure/clojure/{{version}}/jar">{{version}}</a>
+
+    <div class="bg-white">
+      <div class="cf mw8 center pa4">
+        <div class="fl w-100 w-80-ns">
+          {{#days}}
+            <div class="mb5">
+              <time>{{day}}</time>
+              <div>
+                <ul class="list pl0">
+                  {{#posts}}
+                    <li class="mb3">
+                      <div class="mb1">
+                        <a class="f4 near-black link underline-hover" href="{{url}}" target="_blank" rel="noopener noreferrer">
+                          {{title}}
+                        </a>
+                      </div>
+
+                      <div>
+                        <a class="mr2 gray link underline-hover" href="{{source-url}}">
+                          <span>{{source}}</span>
+                        </a>
+
+                        <span class="gray mr2">
+                          {{#author-url}}
+                            <a href="{{author-url}}" class="link gray underline-hover">{{author}}</a>
+                          {{/author-url}}
+                          {{^author-url}}
+                            {{author}}
+                          {{/author-url}}
+                        </span>
+
+                        {{#comments}}
+                          <a class="link gray underline-hover mr2" href="{{comments-url}}">
+                            {{comments}} comments
+                          </a>
+                        {{/comments}}
+
+                        {{#answers}}
+                          <span class="gray mr2">
+                            {{answers}}
+                          </span>
+                        {{/answers}}
+
+                        {{#replies}}
+                          <span class="gray mr2">
+                            {{replies}}
+                          </span>
+                        {{/replies}}
+                      </div>
+                    </li>
+                  {{/posts}}
+                </ul>
+              </div>
             </div>
-          </span>
+          {{/days}}
+        </div>
+        <div class="fl w-100 w-20-ns">
+          <div class="mb4">
+            <div class="bg-lightest-blue navy pv3 tc">
+              <span class="lh-title">
+                <div class="ph3 tl">
+                  <div class="tl mb3">Latest release</div>
+                  <a class="blue tl" href="https://search.maven.org/artifact/org.clojure/clojure/{{version}}/jar">{{version}}</a>
+                </div>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </body>
+</html>
