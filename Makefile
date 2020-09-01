@@ -10,4 +10,5 @@ build:
 	mkdir -p dist && \
 	cp index.html dist/index.html && \
 	cp about.html dist/about.html && \
-	cp css/*.css dist/
+	cp css/*.css dist/ && \
+	rm index.html
