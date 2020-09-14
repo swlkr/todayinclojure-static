@@ -6,4 +6,5 @@ cp -r dist/* . && \
 rm -r dist && \
 git add -A && \
 git commit -m "Update" && \
+git push
 echo "finished!"
