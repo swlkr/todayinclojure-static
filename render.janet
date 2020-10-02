@@ -41,7 +41,7 @@
 (def days (->> posts
                (group-by |(- ($ :created-at) (% ($ :created-at) 86_400)))
                (pairs)
-               (map |(struct :day (datefmt (first $)) :posts (last $)))
+               (map |(struct :day (first $) :dayfmt (datefmt (first $)) :posts (last $)))
                (sort-by |($ :day))
                (reverse)))
 
