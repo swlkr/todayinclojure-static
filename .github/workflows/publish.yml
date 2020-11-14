@@ -1,0 +1,20 @@
+name: Publish
+on:
+  schedule:
+    - cron: "0 * * * *"
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: source
+    - name: publish latest
+      run: |
+        make build && \
+        git checkout master && \
+        cp -r dist/* . && \
+        rm -r dist && \
+        git add -A && \
+        git commit -m "Update" && \
+        git push
