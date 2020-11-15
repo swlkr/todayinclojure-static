@@ -9,10 +9,31 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: source
+    - name: install ruby
+      run: sudo apt install ruby-full
+    - name: install backing for building janet
+      run: sudo apt install build-essential
+    - name: build janet
+      run: |
+        git clone --depth 1 --branch v1.12.2 https://github.com/janet-lang/janet.git /tmp/janet
+        cd /tmp/janet
+        sudo make all test install
     - name: publish latest
       run: |
-        make build
+        janet hn/import.janet
+        janet reddit/import.janet
+        ruby clojureverse/import.rb
+        janet stackoverflow/import.janet
+        janet version/import.janet
+        janet render.janet
+        mkdir -p dist
+        cp index.html dist/index.html
+        cp about.html dist/about.html
+        cp css/*.css dist/
+        rm index.html
         git checkout master
+        cp -r dist/* .
+        rm -r dist
         git add -A
         git commit -m "Update"
         git push
