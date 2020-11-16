@@ -18,6 +18,8 @@ jobs:
         git clone --depth 1 --branch v1.12.2 https://github.com/janet-lang/janet.git /tmp/janet
         cd /tmp/janet
         sudo make all test install
+    - name: install janet deps
+      run: jpm deps
     - name: publish latest
       run: |
         janet hn/import.janet
