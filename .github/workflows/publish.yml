@@ -1,9 +1,7 @@
 name: Publish
 on:
-  # schedule:
-  #   - cron: "0 * * * *"
-  push:
-    branches: [ master ]
+  schedule:
+    - cron: "0 * * * *"
 jobs:
   publish:
     runs-on: ubuntu-latest
