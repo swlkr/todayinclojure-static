@@ -20,6 +20,7 @@ jobs:
         git clone --depth 1 --branch v1.12.2 https://github.com/janet-lang/janet.git /tmp/janet
         cd /tmp/janet
         sudo make all test install
+
     - name: install janet deps
       run: sudo jpm deps
 
@@ -38,7 +39,7 @@ jobs:
         rm index.html
 
     - name: publish latest
-    - run: |
+      run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
         git fetch
