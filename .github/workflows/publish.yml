@@ -2,6 +2,8 @@ name: Publish
 on:
   schedule:
     - cron: "0 * * * *"
+  push:
+    branches: [ master ]
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -9,17 +11,15 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: source
-    - name: install ruby
-      run: sudo apt install ruby-full
-    - name: install backing for building janet
-      run: sudo apt install build-essential
+    - name: install system deps
+      run: sudo apt install build-essential ruby-full
     - name: build janet
       run: |
         git clone --depth 1 --branch v1.12.2 https://github.com/janet-lang/janet.git /tmp/janet
         cd /tmp/janet
         sudo make all test install
     - name: install janet deps
-      run: jpm deps
+      run: sudo jpm deps
     - name: publish latest
       run: |
         janet hn/import.janet
