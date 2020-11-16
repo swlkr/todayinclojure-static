@@ -12,7 +12,7 @@ jobs:
       with:
         ref: source
     - name: install system deps
-      run: sudo apt install build-essential ruby-full
+      run: sudo apt install build-essential libcurl4-openssl-dev ruby-full
     - name: build janet
       run: |
         git clone --depth 1 --branch v1.12.2 https://github.com/janet-lang/janet.git /tmp/janet
