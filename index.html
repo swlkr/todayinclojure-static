@@ -53,6 +53,29 @@
                 <ul class="list pl0">
                     <li class="mb3">
                       <div class="mb1">
+                        <a class="f4 near-black link underline-hover" href="http://app.klipse.tech/?eval_only=1&amp;cljs_in=(def%20users%0A%20%20%23%7B%7B%3Auser-id%201%20%3Aname%20%22john%22%20%20%20%3Aage%2022%20%3Atype%20%22personal%22%7D%0A%20%20%20%20%7B%3Auser-id%202%20%3Aname%20%22jake%22%20%20%20%3Aage%2028%20%3Atype%20%22company%22%7D%0A%20%20%20%20%7B%3Auser-id%203%20%3Aname%20%22amanda%22%20%3Aage%2063%20%3Atype%20%22personal%22%7D%7D)%0A%0A(def%20accounts%0A%20%20%23%7B%7B%3Aacc-id%201%20%3Auser-id%201%20%3Aamount%20300.45%20%3Atype%20%22saving%22%7D%0A%20%20%20%20%7B%3Aacc-id%202%20%3Auser-id%202%20%3Aamount%201200.0%20%3Atype%20%22saving%22%7D%0A%20%20%20%20%7B%3Aacc-id%203%20%3Auser-id%201%20%3Aamount%20850.1%20%3Atype%20%22debit%22%7D%7D)%0A%0A(require%20%27%5Bclojure.set%20%3Aas%20s%5D)%0A%0A%3B%3B%20Clojure%20equivalent%20of%20the%20SQL%3A%0A%3B%3B%20SELECT%20users.user-id%2C%20accounts.acc-id%2C%20%0A%3B%3B%20%20%20%20%20%20%20%20users.type%20as%20type%2C%20accounts.type%20as%20atype%0A%3B%3B%20FROM%20users%0A%3B%3B%20INNER%20JOIN%20accounts%20ON%20users.user-id%20%3D%20accounts.user-id%3B%0A%0A(s%2Fproject%0A%20%20(s%2Fjoin%20users%20(s%2Frename%20accounts%20%7B%3Atype%20%3Aatype%7D))%0A%20%20%5B%3Auser-id%20%3Aacc-id%20%3Atype%20%3Aatype%5D)" target="_blank" rel="noopener noreferrer">
+                          Clojure Set Function Demo
+                        </a>
+                      </div>
+
+                      <div>
+                        <a class="mr2 gray link underline-hover" href="https://news.ycombinator.com">
+                          <span>hn</span>
+                        </a>
+
+                        <span class="gray mr2">
+                            tosh
+                        </span>
+
+                          <a class="link gray underline-hover mr2" href="https://news.ycombinator.com/item?id=25568505">
+                            0 comments
+                          </a>
+
+
+                      </div>
+                    </li>
+                    <li class="mb3">
+                      <div class="mb1">
                         <a class="f4 near-black link underline-hover" href="https://clojureverse.org/t/hobby-project-lobby-client-application-for-spring-rts-games/6953" target="_blank" rel="noopener noreferrer">
                           Hobby project: Lobby Client application for Spring RTS games
                         </a>
@@ -215,7 +238,7 @@
 
 
                           <span class="gray mr2">
-                            0 replies
+                            1 reply
                           </span>
                       </div>
                     </li>
@@ -238,7 +261,7 @@
 
 
                           <span class="gray mr2">
-                            7 replies
+                            9 replies
                           </span>
                       </div>
                     </li>
