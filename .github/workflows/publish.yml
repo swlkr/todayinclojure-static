@@ -11,7 +11,7 @@ jobs:
         ref: source
 
     - name: install system deps
-      run: sudo apt install build-essential libcurl4-openssl-dev ruby-full
+      run: sudo apt-get install build-essential libcurl4-gnutls-dev ruby-full
 
     - name: build janet
       run: |
