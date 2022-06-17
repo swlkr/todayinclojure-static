@@ -1,4 +1,4 @@
-(import musty)
+(import ./musty :as musty)
 (import json)
 
 (def hn (json/decode (slurp "hn.json") true))
