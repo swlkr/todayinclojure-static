@@ -8,7 +8,7 @@
 (def url (string/format "https://api.stackexchange.com/2.2/questions?fromdate=%d&order=desc&sort=activity&tagged=clojure&site=stackoverflow"
                         four-days-ago))
 
-(def response (http/get url))
+(def response (http/get url :headers {"Accept-Encoding" "gzip"}))
 
 (with [f (file/open "results.json.gz" :wb)]
   (file/write f (get response :body)))

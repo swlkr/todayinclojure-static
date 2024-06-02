@@ -24,8 +24,12 @@
 
 
 (defn posts-json []
-  (let [response (http/get "https://old.reddit.com/r/clojure.json")]
-    (json/decode (get response :body) true true)))
+  (let [url "https://old.reddit.com/r/clojure.json"
+        response (http/get url)]
+    (if (= (get response :status) 200)
+      (json/decode (get response :body) true true)
+      (do (printf "Unexpected result from %s\n%q" url response)
+          {:data {:children []}}))))
 
 
 (defn posts-since [time]
